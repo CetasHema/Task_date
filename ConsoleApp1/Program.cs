@@ -6,7 +6,7 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-
+            DateTime dt = new DateTime();
             var date = DateTime.Now;
             var date1 = $"{date:d}";
             Console.WriteLine(date.ToString("dd"));
@@ -38,6 +38,23 @@ namespace ConsoleApp1
             int years = Convert.ToInt32(Console.ReadLine());
             DateTime newDatey = date.AddYears(years);
             Console.WriteLine(newDatey.ToShortDateString());
+
+            Console.WriteLine("Adding time......");
+
+            Console.WriteLine("Enter the number of hours to add :");
+            int hr = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the number of minutes to add :");
+            int mnt = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter the number of seconds to add :");
+            int sec = Convert.ToInt32(Console.ReadLine());
+            TimeSpan ts = new TimeSpan(hr,mnt,sec);
+            DateTime dt1 = dt.Add(ts);
+            Console.WriteLine("Curent date and time:" + dt.ToShortDateString());
+            Console.WriteLine("Date after adding time:" + dt1.ToShortDateString());
+
+
+
+
 
         }
     }
